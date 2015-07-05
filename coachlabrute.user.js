@@ -97,7 +97,6 @@
       }
       
       // Enlarge the level bar
-      var isPadawan = !rankingLabelElement;
       appendStyle(levelBarContainer, {
         'width': 'auto',
         'height': '15px',
@@ -115,7 +114,7 @@
         alert('Desole, mais nous ne connaissons pas encore la taille de votre niveau (' + currentLevel + ').');
         return false;
       }
-      var currentLevelSize = pointsByLevelMap[currentLevel]
+      var currentLevelSize = pointsByLevelMap[currentLevel];
       var currentlevelProgress = Math.round(parseFloat(levelBarElement.style.width) / 100 * currentLevelSize);
       
       // Display the level metrics
@@ -138,7 +137,7 @@
       
       // Add page on classement link
       var classement = document.querySelector('.headStats + .headStats .value a');
-      var page = Math.ceil(classement.innerHTML / 15)
+      var page = Math.ceil(classement.innerHTML / 15);
       var href = classement.getAttribute('href')+';page='+page;
       var classementLinks = document.querySelectorAll('.headStats + .headStats a');
       for (var i=0; i<classementLinks.length; i++) {
@@ -150,7 +149,7 @@
         var style = '';
         var oldStyle = element.getAttribute('style');
         if (oldStyle) {
-          var style = oldStyle.trim() + ' ';
+          style = oldStyle.trim() + ' ';
         }
         for (var property in styleMap) {
           if (styleMap.hasOwnProperty(property)) {
@@ -192,7 +191,7 @@
         }
       }
     }
-  }
+  };
   var script = document.createElement('script');
   script.innerHTML = '(' + execute.toString() + ')( ' + JSON.stringify(settings) + ');';
   document.head.appendChild(script);
